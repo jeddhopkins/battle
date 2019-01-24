@@ -4,4 +4,10 @@ feature 'attacking' do
     click_button 'Attack'
     expect(page).to have_content("Jedd attacked Szilvi!")
   end
+
+  scenario 'when attacking player 2, hit points decrease by 10' do
+    sign_in_and_play
+    click_button 'Attack'
+    expect(page).to have_content("Szilvi: 90HP")
+  end
 end
