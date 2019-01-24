@@ -16,13 +16,6 @@ describe Player do
     end
   end
 
-  describe '#attack' do
-    it 'damages the player' do
-      expect(enemy).to receive(:receive_damage)
-      jedd.attack(enemy)
-    end
-  end
-
   describe '#receive_damage' do
     it 'reduces the player hp' do
       expect{ jedd.receive_damage }.to change{ jedd.hp }.by(-10)
